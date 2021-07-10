@@ -16,6 +16,8 @@ export namespace Components {
         "text": string;
         "type": string;
     }
+    interface LettuceModal {
+    }
     interface LettucePageContentContainer {
     }
     interface LettuceSpacingVertical {
@@ -56,6 +58,12 @@ declare global {
         prototype: HTMLLettuceButtonElement;
         new (): HTMLLettuceButtonElement;
     };
+    interface HTMLLettuceModalElement extends Components.LettuceModal, HTMLStencilElement {
+    }
+    var HTMLLettuceModalElement: {
+        prototype: HTMLLettuceModalElement;
+        new (): HTMLLettuceModalElement;
+    };
     interface HTMLLettucePageContentContainerElement extends Components.LettucePageContentContainer, HTMLStencilElement {
     }
     var HTMLLettucePageContentContainerElement: {
@@ -95,6 +103,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "app-root": HTMLAppRootElement;
         "lettuce-button": HTMLLettuceButtonElement;
+        "lettuce-modal": HTMLLettuceModalElement;
         "lettuce-page-content-container": HTMLLettucePageContentContainerElement;
         "lettuce-spacing-vertical": HTMLLettuceSpacingVerticalElement;
         "lettuce-sudoku-board": HTMLLettuceSudokuBoardElement;
@@ -113,6 +122,8 @@ declare namespace LocalJSX {
         "square"?: boolean;
         "text"?: string;
         "type"?: string;
+    }
+    interface LettuceModal {
     }
     interface LettucePageContentContainer {
     }
@@ -147,6 +158,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "app-root": AppRoot;
         "lettuce-button": LettuceButton;
+        "lettuce-modal": LettuceModal;
         "lettuce-page-content-container": LettucePageContentContainer;
         "lettuce-spacing-vertical": LettuceSpacingVertical;
         "lettuce-sudoku-board": LettuceSudokuBoard;
@@ -161,6 +173,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "lettuce-button": LocalJSX.LettuceButton & JSXBase.HTMLAttributes<HTMLLettuceButtonElement>;
+            "lettuce-modal": LocalJSX.LettuceModal & JSXBase.HTMLAttributes<HTMLLettuceModalElement>;
             "lettuce-page-content-container": LocalJSX.LettucePageContentContainer & JSXBase.HTMLAttributes<HTMLLettucePageContentContainerElement>;
             "lettuce-spacing-vertical": LocalJSX.LettuceSpacingVertical & JSXBase.HTMLAttributes<HTMLLettuceSpacingVerticalElement>;
             "lettuce-sudoku-board": LocalJSX.LettuceSudokuBoard & JSXBase.HTMLAttributes<HTMLLettuceSudokuBoardElement>;
