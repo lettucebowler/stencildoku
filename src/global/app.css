@@ -62,6 +62,71 @@
   --txt-md: 100%;
   --lg: 16px;
   --txt-lg: 125%;
+
+  --ion-text-color: var(--nord3);
+  --ion-color-primary: #4C566A;
+  --ion-color-primary-rgb: 76,86,106;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #434c5d;
+  --ion-color-primary-tint: #5e6779;
+
+  --ion-color-secondary: #88C0D0;
+  --ion-color-secondary-rgb: 136,192,208;
+  --ion-color-secondary-contrast: #000000;
+  --ion-color-secondary-contrast-rgb: 0,0,0;
+  --ion-color-secondary-shade: #78a9b7;
+  --ion-color-secondary-tint: #94c6d5;
+
+  --ion-color-tertiary: #5E81AC;
+  --ion-color-tertiary-rgb: 94,129,172;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255,255,255;
+  --ion-color-tertiary-shade: #537297;
+  --ion-color-tertiary-tint: #6e8eb4;
+
+  --ion-color-success: #A3BE8C;
+  --ion-color-success-rgb: 163,190,140;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0,0,0;
+  --ion-color-success-shade: #8fa77b;
+  --ion-color-success-tint: #acc598;
+
+  --ion-color-warning: #EBCB8B;
+  --ion-color-warning-rgb: 235,203,139;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0,0,0;
+  --ion-color-warning-shade: #cfb37a;
+  --ion-color-warning-tint: #edd097;
+
+  --ion-color-danger: #BF616A;
+  --ion-color-danger-rgb: 191,97,106;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255,255,255;
+  --ion-color-danger-shade: #a8555d;
+  --ion-color-danger-tint: #c57179;
+
+  --ion-color-dark: #2E3440;
+  --ion-color-dark-rgb: 46,52,64;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255,255,255;
+  --ion-color-dark-shade: #282e38;
+  --ion-color-dark-tint: #434853;
+
+  --ion-color-medium: #4C566A;
+  --ion-color-medium-rgb: 76,86,106;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255,255,255;
+  --ion-color-medium-shade: #434c5d;
+  --ion-color-medium-tint: #5e6779;
+
+  --ion-color-light: #ECEFF4;
+  --ion-color-light-rgb: 236,239,244;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0,0,0;
+  --ion-color-light-shade: #d0d2d7;
+  --ion-color-light-tint: #eef1f5;
+
 }
 
 body {
@@ -71,4 +136,9 @@ body {
   color: var(--nord-4);
   overflow-x: hidden;
   background: var(--nord6);
+}
+
+ion-modal {
+  --border-radius: 9px!important;
+  --height: auto;
 }

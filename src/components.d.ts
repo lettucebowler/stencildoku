@@ -124,6 +124,7 @@ declare namespace LocalJSX {
         "type"?: string;
     }
     interface LettuceModal {
+        "onGenerateBoard"?: (event: CustomEvent<string>) => void;
     }
     interface LettucePageContentContainer {
     }

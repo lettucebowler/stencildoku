@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Component, Listen, h, Prop, State, Event, EventEmitter } from '@stencil/core';
+import { modalController } from '@ionic/core';
 import { getIndex } from '../../../helpers/utils';
 import  SudokuToolCollection  from 'sudokutoolcollection';
 
@@ -12,9 +13,7 @@ export class LettuceSudokuGame {
 
   @Prop() order = 3;
 
-  @State() initialBoard: number[] =  this.order === 3 
-    ? [0, 0, 0, 8, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 3, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 7, 5, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 6, 0, 0]
-    : [0, 3, 4, 0, 4, 0, 0, 2, 1, 0, 0, 3, 0, 2, 1, 0];
+  @State() initialBoard: number[] =  Array(this.order * this.order * this.order * this.order).fill(0)
 
   @State() currentBoard: number[] = JSON.parse(JSON.stringify(this.initialBoard));
 
@@ -40,7 +39,24 @@ export class LettuceSudokuGame {
   }
 
   @Listen('newGameEvent')
-  onNewGame(event: CustomEvent): void {
+  async openModal() {
+    const modal: HTMLIonModalElement =
+                 await modalController.create({
+      component: 'lettuce-modal',
+      backdropDismiss: false
+    });
+
+    await modal.present();
+  }
+
+  @Listen('generateBoard', {target: 'document'})
+  async generateBoard(event: CustomEvent) {
+    const modal: HTMLIonModalElement =
+      await modalController.create({
+        component: 'lettuce-modal',
+        backdropDismiss: false
+      });
+
     event.stopPropagation();
     if (this.order === 3) {
       const hints = event.detail || 17;
@@ -53,7 +69,10 @@ export class LettuceSudokuGame {
       this.initialBoard = JSON.parse(JSON.stringify(numArray));
       this.currentBoard = JSON.parse(JSON.stringify(numArray));
     }
+    await modal.dismiss();
   }
+  
+
 
   @Listen('moveEvent')
   onMoveEvent(event: CustomEvent): void {
@@ -67,7 +86,6 @@ export class LettuceSudokuGame {
   }
 
   updateBoard(num: number, row: number, col: number): void {
-    console.log(num);
     if (!isNaN(num) && num >= 0 && num <= this.order * this.order) {
       const spot = getIndex(row, col, this.order);
       const before = this.currentBoard.slice(0, spot);
@@ -92,19 +110,8 @@ export class LettuceSudokuGame {
               current-board={JSON.stringify(this.currentBoard)}
             />
           </div>
-          {/* <lettuce-sudoku-button-group order={this.order}></lettuce-sudoku-button-group> */}
           <div>
             <lettuce-spacing-vertical size-selection="xxs" />
-            {/* <div class="move-buttons">
-              {Array.from({length: this.order * this.order + 1}, (_, i) => i + 1).map((num) => 
-                <lettuce-button 
-                  square 
-                  text={(num % (this.order * this.order + 1)).toString()} 
-                  size-selection="lg" 
-                  onClick={() => this.moveEvent.emit({num: num % (this.order * this.order + 1)})} 
-                />
-              )}
-            </div> */}
             <lettuce-sudoku-move-buttons order={this.order} />
           </div>
           <div class="bottom-row" style={{ display: 'flex', flexDirection: 'column' }}>
