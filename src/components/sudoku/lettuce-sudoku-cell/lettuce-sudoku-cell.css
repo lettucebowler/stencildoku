@@ -1,0 +1,79 @@
+.number {
+  display: grid;
+  width: 100%;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 175%;
+  border-radius: 0px;
+  border: none;
+  aspect-ratio: 1;
+  padding: 2px 2px;
+  background: var(--nord6);
+  color: var(--nord10);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+}
+
+.top-left {
+  border-radius:6px 0px 0px 0px;
+}
+
+.bottom-right {
+  border-radius: 0px 0px 6px 0px;
+}
+
+.bottom-left {
+  border-radius: 0px 0px 0px 6px;
+}
+
+.top-right {
+  border-radius: 0px 6px 0px 0px;
+}
+
+.peer-cell {
+  background: var(--nord8);
+}
+
+.peer-digit {
+  background: var(--nord9);
+}
+
+.number.valid {
+  color: var(--nord10);
+}
+
+.number.invalid {
+  color: var(--nord11);
+}
+
+.number.none {
+  color: transparent;
+}
+
+.number.initial {
+  color: var(--nord3);
+}
+
+.number.peer-digit.peer-cell.invalid {
+  background: var(--nord15);
+}
+
+.selected {
+  background: var(--nord13);
+}
+
+.success {
+  background: var(--nord14);
+}
+
+.number:hover {
+  background: var(--nord13);
+}
+
+.number:active {
+  background: var(--nord12);
+}

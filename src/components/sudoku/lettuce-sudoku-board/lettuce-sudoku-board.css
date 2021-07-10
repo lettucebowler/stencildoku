@@ -1,0 +1,27 @@
+ .sudoku-board {
+   display: grid;
+   grid-gap: 1px;
+   aspect-ratio: 1;
+   width: 100%;
+ }
+
+ .sudoku-board.three {
+   grid-template-columns: 1fr 1fr 1fr 1px 1fr 1fr 1fr 1px 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr 1px 1fr 1fr 1fr 1px 1fr 1fr 1fr;
+ }
+
+ .sudoku-board.two {
+  grid-template-columns: 1fr 1fr 1px 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1px 1fr 1fr;
+}
+
+.border {
+  display: grid;
+  background: var(--nord3);
+  border-radius: 9px;
+}
+
+.content {
+  display: grid;
+  padding: 3px 3px;
+}

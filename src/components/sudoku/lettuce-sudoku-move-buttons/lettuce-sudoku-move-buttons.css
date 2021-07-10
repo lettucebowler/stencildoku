@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.move-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 4px;
+  row-gap: 4px;
+}

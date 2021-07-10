@@ -1,0 +1,74 @@
+/* Document Level Styles */
+
+/*
+  The imports below are needed to include our light dom css for global styles such as fonts and colors.
+  You can comment out any of these imports if you do not need that css. For example, if you have your own
+  global font family css then you can comment out the typography.css import.
+*/
+
+/** Core CSS required for ionic components to work property */
+@import '~@ionic/core/css/core.css';
+
+/** Basic CSS for apps built with Ionic */
+@import '~@ionic/core/css/normalize.css';
+@import '~@ionic/core/css/structure.css';
+@import '~@ionic/core/css/typography.css';
+
+/** Optional CSS utils that can be commented out */
+@import '~@ionic/core/css/padding.css';
+@import '~@ionic/core/css/float-elements.css';
+@import '~@ionic/core/css/text-alignment.css';
+@import '~@ionic/core/css/text-transformation.css';
+@import '~@ionic/core/css/flex-utils.css';
+
+/*
+  The CSS Variables below can be used to theme your app.
+  For more info on CSS variables check out:
+  https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
+
+  More info about color theming using Ionic:
+  https://ionicframework.com/docs/theming/color-generator
+*/
+
+:root {
+
+  /* Polar Night */
+  --nord0: #2E3440;
+  --nord1: #3B4252;
+  --nord2: #434C5E;
+  --nord3: #4C566A;
+
+  /* Snow Storm */
+  --nord4: #D8DEE9;
+  --nord5: #E5E9F0;
+  --nord6: #ECEFF4;
+  
+  /* Frost */
+  --nord7: #8FBCBB;
+  --nord8: #88C0D0;
+  --nord9: #81A1C1;
+  --nord10: #5E81AC;   
+
+  /* Aurora */
+  --nord11: #BF616A;
+  --nord12: #D08770;
+  --nord13: #EBCB8B;
+  --nord14: #A3BE8C;
+  --nord15: #B48EAD;
+
+  --sm: 8px;
+  --txt-sm: 75%;
+  --md: 12px;
+  --txt-md: 100%;
+  --lg: 16px;
+  --txt-lg: 125%;
+}
+
+body {
+  margin: 0px 0px;
+  font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 100%;
+  color: var(--nord-4);
+  overflow-x: hidden;
+  background: var(--nord6);
+}

@@ -1,0 +1,20 @@
+:host {
+  height: var(--md);
+}
+
+.vertical-xxs {
+  height: 4px;
+  min-height: 4px;
+}
+
+.vertical-sm {
+  height: var(--sm);
+}
+
+.vertical-md {
+  height: var(--md);
+}
+
+.vertical-lg {
+  height: var(--lg);
+}

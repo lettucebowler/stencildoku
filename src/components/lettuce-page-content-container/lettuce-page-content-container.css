@@ -1,0 +1,16 @@
+.column {
+  display: flex;
+  width: 62.5vh;
+  padding: 0 4px;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  margin: auto;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  width: 100vw;
+}

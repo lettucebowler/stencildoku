@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+.sudoku-game {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.button-rows {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  row-gap: 4px;
+}
+
+.bottom-row {
+  display: flex;
+  flex-direction: column;
+  min-height: 11vh;
+  max-height: 12vh;
+}
